@@ -107,10 +107,10 @@ export function LoginForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full text-base py-5 font-medium shadow-md transition-all hover:translate-y-[1px]" disabled={loading} data-testid="button-login">
+            <Button type="submit" className="w-full text-base py-5 font-medium shadow-md transition-all hover:translate-y-[-1px] active:scale-[0.98] hover:shadow-lg ring-offset-background focus-visible:ring-2" disabled={loading} data-testid="button-login">
               {loading ? "Signing in..." : (
                 <span className="flex items-center gap-2">
-                  Login <ArrowRight className="h-4 w-4" />
+                  Login <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
               )}
             </Button>

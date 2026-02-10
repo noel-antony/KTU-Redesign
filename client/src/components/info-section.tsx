@@ -27,17 +27,17 @@ export function InfoSection() {
   ];
 
   return (
-    <div className="grid gap-6 md:grid-cols-3 mt-12 animate-in slide-in-from-bottom-4 duration-700 delay-200">
+    <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3 xl:gap-8 mt-12 animate-in slide-in-from-bottom-4 duration-700 delay-200">
       {items.map((item, index) => (
-        <Card key={index} className="border-none shadow-sm hover:shadow-md transition-shadow duration-300">
+        <Card key={index} className="border-none shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white/50 backdrop-blur-sm group">
           <CardHeader className="pb-3">
-            <div className={`w-12 h-12 rounded-full ${item.bg} flex items-center justify-center mb-4`}>
+            <div className={`w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center mb-4 transition-transform group-hover:scale-110 duration-300 shadow-sm`}>
               <item.icon className={`h-6 w-6 ${item.color}`} />
             </div>
-            <CardTitle className="text-lg font-serif text-foreground">{item.title}</CardTitle>
+            <CardTitle className="text-lg font-serif text-foreground group-hover:text-primary transition-colors">{item.title}</CardTitle>
           </CardHeader>
           <CardContent>
-            <CardDescription className="text-sm leading-relaxed text-muted-foreground">
+            <CardDescription className="text-sm leading-relaxed text-muted-foreground group-hover:text-slate-600 transition-colors">
               {item.description}
             </CardDescription>
           </CardContent>

@@ -50,38 +50,41 @@ export default function LoginPage() {
         {/* Gradient Overlay for depth */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
 
-        <div className="container mx-auto px-4 py-8 md:py-16 flex-1 flex flex-col z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto w-full">
+        <div className="container mx-auto px-4 py-8 md:py-20 flex-1 flex flex-col z-10 max-w-7xl">
+          <div className="flex flex-col gap-12 lg:gap-16 w-full">
             
-            {/* Left Column: Welcome Text & Info (Visible on Desktop) */}
-            <div className="space-y-6 lg:mt-8">
-              <div className="space-y-4 text-center lg:text-left animate-in slide-in-from-left-4 duration-700">
-                <div className="inline-block px-3 py-1 rounded-full bg-blue-100 text-primary text-xs font-semibold tracking-wide uppercase mb-2">
-                  e-Governance Portal
+            {/* Top Section: Hero + Login */}
+            <div className="grid lg:grid-cols-5 gap-12 items-center">
+              {/* Left: Welcome Text */}
+              <div className="lg:col-span-3 space-y-6 lg:mt-0">
+                <div className="space-y-4 text-center lg:text-left animate-in slide-in-from-left-4 duration-700">
+                  <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100/80 text-primary text-xs font-bold tracking-widest uppercase mb-2 border border-blue-200/50">
+                    e-Governance Portal
+                  </div>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-[1.1] tracking-tight">
+                    Welcome to the <br/>
+                    <span className="text-primary relative inline-block">
+                      KTU Digital Platform
+                      <span className="absolute bottom-1 left-0 w-full h-1 bg-primary/10 rounded-full"></span>
+                    </span>
+                  </h2>
+                  <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                    A centralized gateway for students, faculty, and institutions to manage academic activities, examinations, and university services efficiently.
+                  </p>
                 </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight">
-                  Welcome to the <br/>
-                  <span className="text-primary">KTU Digital Platform</span>
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  A centralized gateway for students, faculty, and institutions to manage academic activities, examinations, and university services efficiently.
-                </p>
               </div>
 
-              {/* Info Cards - Moved here for desktop layout */}
-              <div className="hidden lg:block">
-                 <InfoSection />
+              {/* Right: Login Card */}
+              <div className="lg:col-span-2 w-full flex justify-center lg:justify-end perspective-1000">
+                <div className="w-full max-w-md transform transition-transform hover:scale-[1.01] duration-500">
+                  <LoginForm />
+                </div>
               </div>
             </div>
 
-            {/* Right Column: Login Card */}
-            <div className="w-full flex justify-center lg:justify-end">
-              <LoginForm />
-            </div>
-
-            {/* Info Cards - Visible below fold on Mobile/Tablet */}
-            <div className="lg:hidden mt-8">
-              <InfoSection />
+            {/* Bottom Section: Info Cards (Full Width) */}
+            <div className="w-full pt-8 border-t border-slate-200/60">
+               <InfoSection />
             </div>
 
           </div>
